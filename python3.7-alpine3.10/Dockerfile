@@ -1,7 +1,7 @@
 FROM python:3.7-alpine3.10
 
 RUN apk add --no-cache --virtual .build-deps gcc libc-dev make \
-    && pip install gunicorn uvicorn \
+    && pip --no-cache-dir install gunicorn uvicorn \
     && apk del .build-deps gcc libc-dev make
 
 COPY ./start.sh /start.sh

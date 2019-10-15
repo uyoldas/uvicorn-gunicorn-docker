@@ -1,7 +1,7 @@
 FROM python:3.7-slim-buster
 
 RUN apt-get update && apt-get --no-install-recommends -y install python3.7-dev build-essential \
- && pip install gunicorn uvicorn \
+ && pip install --no-cache-dir gunicorn uvicorn \
  && apt-get -y purge --auto-remove -y python3.7-dev build-essential \
  && rm -rf /var/lib/apt/lists/*
 
